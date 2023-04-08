@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        body{
+            background-color: bisque;
+            text-align: center;
+        }
+        h1{
+            color: rgb(0, 0, 0);
+        }
+        pre{
+            color: rgb(190, 16, 16);
+            font-size: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<h1>Q1:Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h1>
+<pre>
+    let parent={
+        name:"saleem",
+        roll:12,
+        isAdmin:true,
+        walk: function () {
+                    console.log('I AM Parent')
+           }
+        
+    }
+    let child={}
+    child.__proto__ = parent
+    child.walk()
+</pre>
+
+
+<h1>Q2:Write code to explain prototype chaining</h1>
+<pre>
+    let obj1={
+        name:"malik",
+         set:function(){
+             console.log("let SET")
+            }
+     }
+     let obj2={
+         lname:"SAALEEM",
+         walks:"true",
+     }
+        let obj3={
+            food:"junk food",
+            walks:"true",
+        
+         }
+        
+         obj2.__proto__=obj1
+         obj3.__proto__=obj2
+         obj2.set()// let SET
+        obj3.set()// the output is More
+</pre>
+
+
+<h1>Q3:Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</h1>
+<pre>
+    for (let key in child) {
+        if (child.hasOwnProperty(key)) {
+              console.log(key, 'OWN')
+          } else {
+              console.log(key, 'INHERITED')
+          }
+     }
+
+
+</pre>
+
+
+<h1>Q4:Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h1>
+<pre>
+    let AA=[100,200,300,400,500]
+    let res = AA.reduce((acc,curr)=>{
+        acc+=curr
+        return acc
+    },0)
+    console.log(res);
+
+
+</pre>
+    <script src="./script.js"></script>
+</body>
+</html>
